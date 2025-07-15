@@ -1,8 +1,14 @@
+* {
+    font-family: fantasy;
+}
+
+
+
 html {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(232, 65, 65);
+    background-color: rgb(82, 2, 2);
     height: 100dvh
 }
 
@@ -16,36 +22,60 @@ body {
     'volume volume tumo';
     grid-template-rows: 64px auto 32px auto 32px;
     grid-template-columns: 33% auto 33%;
-    background-color: black;
+    background-color: rgb(188, 16, 16);
     width: 600px; 
     height: 600px;
+    border-radius: 50px;
+    overflow:hidden ;
 }
+
+
+button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+button:active {
+    scale: 0.9;
+}
+
     
 
 
 #title {
-    background-color: black ;
     color: white;
     margin: 0px;
     grid-area: title;
+    font-size: 35px;
 }
 
 #open-input {
     grid-area: open;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-button {
-    background: grey;
-    margin: 5px;
+#file-input {
+    position: absolute;
+    opacity: 0;
+    inset: 0;
 }
+
 
 #beats {
     grid-area: beats;
     color: grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #scrub-input {
+    display: flex;
     grid-area: scrub;
+    position: relative;
 }
 
 #previous-button {
@@ -55,16 +85,39 @@ button {
 #play-button {
     grid-area: playpause;
 }
+#icon-play {
+
+}
+
+#icon-pause {
+    display: none;
+}
 
 #next-button {
     grid-area: next;
 }
 
 #volume-input {
+    display: flex;
     grid-area: volume;
+    position: relative;
 }
 
 #tumo {
     grid-area: tumo;
     color: grey;
+}
+
+.range-bar {
+    position: absolute;
+    inset: 0;
+    background-color: white;
+    pointer-events: none;
+    transform: scaleX(0.5);
+    transform-origin: left;
+}
+
+input[type="range"] {
+    flex: 1;
+    opacity: 0;
 }
