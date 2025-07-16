@@ -1,6 +1,16 @@
 [
     {
       "title": "musica1",
+      "url": "audios/music03.mp3"
+    },
+    {
+      "title": "musica2",
+      "url": "audios/music02.mp3"
+    },
+    {
+      "title": "musica3",
       "url": "audios/music01.mp3"
     }
+   
+   
 ]
