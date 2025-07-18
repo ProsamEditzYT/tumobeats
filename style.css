@@ -8,7 +8,7 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(73, 2, 2);
+    background-color: rgb(125, 12, 12);
     height: 100dvh
 }
 
@@ -22,14 +22,14 @@ body {
     'volume volume tumo';
     grid-template-rows: 64px auto 32px auto 32px;
     grid-template-columns: 33% auto 33%;
-    background-color: rgb(206, 27, 27);
+    background-color: rgb(253, 0, 0);
     width: 600px; 
     height: 600px;
     border-radius: 50px;
     overflow:hidden;
-    -webkit-box-shadow:0px 0px 100px 45px rgba(4, 0, 0, 0.9);
--moz-box-shadow: 0px 0px 100px 45px rgba(3, 0, 0, 0.9);
-box-shadow: 0px 0px 100px 45px rgba(6, 0, 0, 0.9);
+    -webkit-box-shadow:0px 0px 300px 121px rgba(0, 0, 0, 0.9);
+-moz-box-shadow: 0px 0px 300px 121px rgba(0, 0, 0, 0.9);
+box-shadow: 0px 0px 300px 121px rgba(0, 0, 0, 0.9);
 }
 
 
@@ -50,6 +50,7 @@ button:active {
     margin: 0px;
     grid-area: title;
     font-size: 35px;
+    margin: 2%;
 }
 
 #open-input {
@@ -58,12 +59,14 @@ button:active {
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 
 #file-input {
     position: absolute;
     opacity: 0;
     inset: 0;
+    cursor: pointer;
 }
 
 
@@ -80,7 +83,8 @@ button:active {
     display: flex;
     grid-area: scrub;
     position: relative;
-}
+    margin: 2px;
+}  
 
 #previous-button {
     grid-area: previous;
@@ -88,12 +92,12 @@ button:active {
 
 #play-button {
     grid-area: playpause;
-    color: black;
-    
+    color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-#icon-play {
 
-}
 
 #icon-pause {
     display: none;
@@ -107,12 +111,23 @@ button:active {
     display: flex;
     grid-area: volume;
     position: relative;
+    margin-left: 20%;
+    margin: 2px;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+#volume-input .container {
+    display: flex; 
+    position: relative;
+    flex: 1;
+    width: 100%;
 }
 
 #tumo {
     grid-area: tumo;
     color: grey;
-    
 }
 
 .range-bar {
@@ -122,9 +137,11 @@ button:active {
     pointer-events: none;
     transform: scaleX(0.5);
     transform-origin: left;
+    border-radius: 50px;
 }
 
 input[type="range"] {
     flex: 1;
     opacity: 0;
+    cursor: pointer;
 }

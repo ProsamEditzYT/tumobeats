@@ -1,9 +1,9 @@
 window.onload = async function() {
 
     // carregar o service worker
-    if ("serviceWorker" in navigator) {
-        navigator.serviceWorker.register("service-worker.js");
-    }
+     if ("serviceWorker" in navigator) {
+         navigator.serviceWorker.register("service-worker.js");
+     }
 
     //Carregar dados da internet (data.json)
     let request = await fetch("data.json");
@@ -25,7 +25,10 @@ window.onload = async function() {
     let fileInput = document.querySelector("#file-input");
 
     let audio = document.querySelector("audio");
+    audio.src = audioData[0].url
     let currentMusic = 0;
+    let pauseTime = 0;
+
     
 
     
@@ -51,7 +54,10 @@ playButton.onclick = function() {
 
     if(audio.paused) {
         playAudio();
+        audio.currentTime = pauseTime;
+        pauseTime = 0;
     } else {
+        pauseTime = audio.currentTime;
         pauseAudio();
     }
 }
@@ -125,13 +131,17 @@ audio.ontimeupdate = function() {
     updateInputBar(value, bar);
 }
 
-function scrubAudio(value) {
+audio.onended = function() {
+    nextButton.click();
+}
 
+function scrubAudio(value) {
+    
     if(!audio.src) return;
      audio.currentTime = audio.duration * (value / 100);
 }
 
    
    
-   changeTitle("Sayhan")
+   changeTitle("Tumo Beats")
 }
